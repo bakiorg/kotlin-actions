@@ -1,0 +1,14 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  kotlin-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+      - name: Run Kotlin script
+        run: kotlinc -script .github/scripts/hello.main.kts
