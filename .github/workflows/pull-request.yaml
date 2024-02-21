@@ -1,0 +1,19 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  kotlin-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+      - name: Test
+        run: |
+          ls /home/runner/work/_temp/_runner_file_commands/
+      - name: Run Kotlin script
+        run: kotlinc -script .github/scripts/hello.main.kts
+        env:
+          BAKI: KING
