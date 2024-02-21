@@ -12,3 +12,5 @@ jobs:
         uses: actions/checkout@v4.1.1
       - name: Run Kotlin script
         run: kotlinc -script .github/scripts/hello.main.kts
+        env:
+          BAKI: KING
