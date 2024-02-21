@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.1.1
+      - name: Test
+        run: |
+          ls /home/runner/work/_temp/_runner_file_commands/
       - name: Run Kotlin script
         run: kotlinc -script .github/scripts/hello.main.kts
         env:
